@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "PomoZen",
+    "version": "1.0",
+    "description": "Browser-based Extension for Phishing Attack Detector",
+    "icons":{
+        "128": "photos/icon128.png",
+        "48": "photos/icon48.png",
+        "16": "photos/icon16.png"
+    },
+
+    "action": {
+        "default_icon": "photos/icon16.png",
+        "default_popup": "popup.html"
+    },
+
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "storage"
+    ],
+
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    }
+
+}   

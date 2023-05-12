@@ -13,7 +13,14 @@ function formatTimeLeft(timeLeftInSeconds) {
 }
 
 function startTimer() {
-  chrome.runtime.sendMessage({ action: 'startTimer' });
+//   chrome.runtime.sendMessage({ action: 'startTimer' });
+    if (startButton.textContent === 'Start') {
+        chrome.runtime.sendMessage({ action: 'startTimer' });
+        startButton.textContent = 'Pause';
+    } else {
+        chrome.runtime.sendMessage({ action: 'pauseTimer' });
+        startButton.textContent = 'Start';
+    }
 }
 
 function resetTimer() {
